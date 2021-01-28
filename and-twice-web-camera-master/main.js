@@ -1,4 +1,4 @@
-// const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas");
 // const ctx = canvas.getContext("2d");
 const camera = document.getElementById("camera");
 // let choosen = document.getElementById("chaeyoung");
@@ -22,32 +22,32 @@ function capture(mode) {
 //     camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
 // }
 
-// function render() {
-//     const width = canvas.width;
-//     const height = canvas.height;
-//     const videoSize = {
-//         width: camera.offsetWidth,
-//         height: camera.offsetHeight,
-//     };
-//     const ratio = Math.max(width / videoSize.width, height / videoSize.height);
+function render() {
+    const width = canvas.width;
+    const height = canvas.height;
+    const videoSize = {
+        width: camera.offsetWidth,
+        height: camera.offsetHeight,
+    };
+    const ratio = Math.max(width / videoSize.width, height / videoSize.height);
 
-//     if (!capturing) {
-//         ctx.clearRect(0, 0, width, height);
-//         ctx.drawImage(
-//             camera,
-//             0,
-//             0,
-//             videoSize.width,
-//             videoSize.height,
-//             (width - videoSize.width * ratio) / 2,
-//             (height - videoSize.height * ratio) / 2,
-//             videoSize.width * ratio,
-//             videoSize.height * ratio
-//         );
-//         ctx.drawImage(choosen, 0, 0, width, height);
-//         window.requestAnimationFrame(render);
-//     }
-// }
+    if (!capturing) {
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(
+            camera,
+            0,
+            0,
+            videoSize.width,
+            videoSize.height,
+            (width - videoSize.width * ratio) / 2,
+            (height - videoSize.height * ratio) / 2,
+            videoSize.width * ratio,
+            videoSize.height * ratio
+        );
+        ctx.drawImage(choosen, 0, 0, width, height);
+        window.requestAnimationFrame(render);
+    }
+}
 
 // function dataURIToBlob(dataURI) {
 //     const binStr = atob(dataURI.split(",")[1]);
@@ -65,7 +65,7 @@ function capture(mode) {
 //     );
 //}
 
-// render();
+render();
 capture(mode);
 //document.getElementById("capture").addEventListener("click", () => {
 //    const downloadBtn = document.getElementById("download");
