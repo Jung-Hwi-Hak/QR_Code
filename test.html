@@ -79,20 +79,48 @@
     })
 
 
+    // let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
+    // scanner.addListener('scan',function(content){
+    //     $('#msg2').text(content);
+    // });
+
+    // Instascan.Camera.getCameras().then(function(cameras){
+    //     if(cameras.length > 0){
+    //         scanner.start(cameras[1]);
+    //     }else{
+    //         console.error('No cameras found');
+    //     }
+    // }).catch(function(e){
+    //     console.error(e);
+    // });
     let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
     scanner.addListener('scan',function(content){
         $('#msg2').text(content);
     });
 
-    Instascan.Camera.getCameras().then(function(cameras){
-        if(cameras.length > 0){
-            scanner.start(cameras[1]);
-        }else{
-            console.error('No cameras found');
-        }
-    }).catch(function(e){
-        console.error(e);
-    });
+         Instascan.Camera.getCameras().then(function(cameras){
+            if(cameras.length > 0){
+                scanner.start(cameras[0]);
+                $('[name="options"]').on('change', function(){
+                    if($(this).val() == 1){
+                        if(cameras[0] != ""){
+                            scanner.start(cameras[0]);
+                        }else{
+                            alert('No Front Camera Found');
+                        }
+                    }else if($(this).val() == 2){
+                        if(camearas[1]!= ""){
+                            scanner.start(cameras[1]);
+                        }else{
+                            alert('No Back Camera Found');
+                        }
+                    }
+                });
+            }else{
+                alert('No Camera Found');
+            }
+        })
+
     // $('#startbtn').click(function(){
     //     $('#startbtn img').hide();
     //     $('#stopbtn').show();
