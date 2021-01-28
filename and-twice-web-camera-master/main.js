@@ -1,9 +1,8 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const camera = document.getElementById("camera");
-let choosen = document.getElementById("chaeyoung");
 let mode = "user";
-let capturing = false; 
+let capturing = false;
 
 function capture(mode) {
     navigator.mediaDevices
@@ -44,7 +43,7 @@ function render() {
             videoSize.width * ratio,
             videoSize.height * ratio
         );
-        ctx.drawImage(choosen, 0, 0, width, height);
+        // ctx.drawImage(choosen, 0, 0, width, height);
         window.requestAnimationFrame(render);
     }
 }
@@ -68,11 +67,11 @@ function dataURIToBlob(dataURI) {
 render();
 capture(mode);
 document.getElementById("capture").addEventListener("click", () => {
-   const downloadBtn = document.getElementById("download");
+    const downloadBtn = document.getElementById("download");
 
-   capturing = true;
-   camera.pause();
-   downloadBtn.href = dataURIToBlob(canvas.toDataURL());
+    capturing = true;
+    camera.pause();
+    downloadBtn.href = dataURIToBlob(canvas.toDataURL());
     downloadBtn.download = `You & ${choosen.id}`;
     downloadBtn.click();
     camera.play();
