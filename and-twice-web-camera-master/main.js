@@ -3,7 +3,7 @@ const canvas = document.getElementById("canvas");
 const camera = document.getElementById("camera");
 // let choosen = document.getElementById("chaeyoung");
 let mode = "user";
-// let capturing = false;
+let capturing = false;
 
 function capture(mode) {
     navigator.mediaDevices
