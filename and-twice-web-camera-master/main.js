@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas");
-// const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 const camera = document.getElementById("camera");
-// let choosen = document.getElementById("chaeyoung");
+let choosen = document.getElementById("chaeyoung");
 let mode = "user";
 let capturing = false; 
 
@@ -18,9 +18,9 @@ function capture(mode) {
         });
 }
 
-// function stopCamera() {
-//     camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
-// }
+function stopCamera() {
+    camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
+}
 
 function render() {
     const width = canvas.width;
@@ -49,44 +49,44 @@ function render() {
     }
 }
 
-// function dataURIToBlob(dataURI) {
-//     const binStr = atob(dataURI.split(",")[1]);
-//     const len = binStr.length;
-//     const arr = new Uint8Array(len);
+function dataURIToBlob(dataURI) {
+    const binStr = atob(dataURI.split(",")[1]);
+    const len = binStr.length;
+    const arr = new Uint8Array(len);
 
-//     for (var i = 0; i < len; i++) {
-//         arr[i] = binStr.charCodeAt(i);
-//     }
+    for (var i = 0; i < len; i++) {
+        arr[i] = binStr.charCodeAt(i);
+    }
 
-//     return window.URL.createObjectURL(
-//         new Blob([arr], {
-//             type: "image/png",
-//         })
-//     );
-//}
+    return window.URL.createObjectURL(
+        new Blob([arr], {
+            type: "image/png",
+        })
+    );
+}
 
 render();
 capture(mode);
-//document.getElementById("capture").addEventListener("click", () => {
-//    const downloadBtn = document.getElementById("download");
-//
-//    capturing = true;
-//    camera.pause();
-//    downloadBtn.href = dataURIToBlob(canvas.toDataURL());
-//     downloadBtn.download = `You & ${choosen.id}`;
-//     downloadBtn.click();
-//     camera.play();
-//     capturing = false;
-//     render();
-// });
+document.getElementById("capture").addEventListener("click", () => {
+   const downloadBtn = document.getElementById("download");
+
+   capturing = true;
+   camera.pause();
+   downloadBtn.href = dataURIToBlob(canvas.toDataURL());
+    downloadBtn.download = `You & ${choosen.id}`;
+    downloadBtn.click();
+    camera.play();
+    capturing = false;
+    render();
+});
 document.getElementById("switch").addEventListener("click", () => {
     stopCamera();
     mode = `${mode === "user" ? "environment" : "user"}`;
     capture(mode);
 });
 
-// [...document.querySelectorAll(".twice")].forEach((twice) => {
-//     twice.addEventListener("click", (e) => {
-//         choosen = e.target;
-//     });
-// });
+[...document.querySelectorAll(".twice")].forEach((twice) => {
+    twice.addEventListener("click", (e) => {
+        choosen = e.target;
+    });
+});
