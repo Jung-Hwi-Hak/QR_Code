@@ -63,7 +63,7 @@ function stopCamera() {
 //             type: "image/png",
 //         })
 //     );
-}
+//}
 
 render();
 capture(mode);
