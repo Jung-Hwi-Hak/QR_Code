@@ -1,5 +1,5 @@
 html,
-body{ width: 100%; margin: 0; padding: 0; list-style: none; text-decoration: none; background-color: black; }
+body{ width: 100%; margin: 0; padding: 0; list-style: none; text-decoration: none; background-color:blanchedalmond; }
 
 #camera{ position: absolute; z-index: 9999; width: 500px; height: 500px;  background-color: aquamarine; left: 500px; top: 500px; transform: translate(-50%, -50%);}
 #stream{ position: absolute; width: 1000px; height: 1000px; background-color: blanchedalmond; left: 50%; top: 30%; transform: translate(-50%, -50%);}
