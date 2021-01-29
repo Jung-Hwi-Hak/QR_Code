@@ -41,8 +41,20 @@ scanner.scan(function(content){
 
 function capture(mode) {
 
-    navigator.mediaDevices
-        .getUserMedia({
+//     navigator.mediaDevices
+//         .getUserMedia({
+//             audio: false,
+//             video: {
+//                 facingMode: mode, // mode 값에 따라 video 촬영 위치 변경.
+//             },
+//         })
+//         .then((stream) => { // stream 시작.
+//             camera.srcObject = stream;
+//         });
+     Instascan.Camera.getCameras().then(function(cameras){ //카메라 켜기.
+        if(cameras.length > 0){ // 카메라가 있으면.
+            scanner.start(cameras[0]); // 첫번째 카메라 켜기.
+            navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
                 facingMode: mode, // mode 값에 따라 video 촬영 위치 변경.
@@ -51,6 +63,12 @@ function capture(mode) {
         .then((stream) => { // stream 시작.
             camera.srcObject = stream;
         });
+        }else{
+            console.error('No cameras found'); // 카메라가 없으'면 error 
+        }
+    }).catch(function(e){
+        console.error(e);
+    });
 }
 
 function stopCamera() { // mode를 변경하는 버튼을 누르면 정지 시키고
