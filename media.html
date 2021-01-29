@@ -33,6 +33,10 @@
         }).catch(console.error)
     }
     
+    function stopCamera() {
+        camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
+    }
+    
     document.getElementById("switch").addEventListener("click", () =>{
         stopCamera();
         mode = '${mode === "user" ? "environment" : "user"}';
