@@ -3,7 +3,7 @@
 const camera = document.getElementById("camera");
 let mode = "user";
 //let capturing = false;
-
+document.getElementId('') 
 capture(mode);
 
 function capture(mode) {
