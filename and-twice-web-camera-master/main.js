@@ -19,13 +19,13 @@ function capture(mode) {
         });
 }
 
-//function stopCamera() {
-//    camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
-//}
+function stopCamera() {
+    camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
+}
 
 
 document.getElementById("switch").addEventListener("click", () => {
-    //stopCamera();
+    stopCamera();
     mode = `${mode === "user" ? "environment" : "user"}`;
     capture(mode);
 });
