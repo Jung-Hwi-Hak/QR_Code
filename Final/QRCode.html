@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinalQR</title>
+    <link rel="stylesheet" href="QRCode.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+<body>
+    
+    <div id="option">
+        <div id="btn1" class="active">&#8230;</div> <!-- 바코드 생성하는 페이지 이동 버튼 -->
+        <div id="btn2">&#9974;</div><!-- 바코드 scan 페이지 이동 버튼-->
+    </div>
+
+    <div id="main">
+        <div id="box1">
+            <div id="inputs">
+                <input type="text" placeholder="원하는 글 입력하기" id="data"> <!--QR코드에 등록할 글, 주소-->
+                <div id="msg">Hit enter to generate QR code</div>
+            </div>
+
+            <div id="outputbox"> <!--QR코드가 나타나는 구간.-->
+                <span id="qrcode"></span><!--QR코드가 나타나는 구간.-->
+            </div>
+        </div>
+
+        <div id="box2">
+            <div id="scanner">
+                <button id="stopbtn">Stop</button>
+                <button id="startbtn">Start</button>
+                <video id="preview" class="p-1 border"></video>
+                <span id="msg2"></span>
+                <span id="switch" class="button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 768 768"><path fill="#f1f1f1" d="M528 496.5l79.5-81h-63q0-66-47.25-112.5t-113.25-46.5q-39 0-75 19.5l22.5 22.5q21-10.5 52.5-10.5 52.5 0 90 37.5t37.5 90h-63zM384 576q39 0 75-19.5l-22.5-24q-24 12-52.5 12-52.5 0-90-38.25t-37.5-90.75h63l-79.5-79.5-79.5 79.5h63q0 66 47.25 113.25t113.25 47.25zM640.5 160.5q25.5 0 44.25 18.75t18.75 44.25v384q0 25.5-18.75 45t-44.25 19.5h-513q-25.5 0-44.25-19.5t-18.75-45v-384q0-25.5 18.75-44.25t44.25-18.75h102l58.5-64.5h192l58.5 64.5h102z"></path></svg></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="QRCode.js"></script>

@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    background-color: rgb(65, 46, 46);
+    overflow: hidden;
+}
+#option{
+    width: 70px;
+    height: 130px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    border-radius: 35px;
+    z-index: 9999;
+
+}
+
+#main{
+    width: 200%;
+    height: 100;
+    background-color: red;
+    position: relative;
+    float: left;
+}
+
+#box1{
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    float: left;
+}
+
+#box1 #outputbox{ width: 400px; height: 400px; background-color:#ffbb00; position: absolute; right: 20%; top: 20%; }
+#box1 #outputbox #qrcode{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);} 
+#box2{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    top: 0px;
+    left: 50%;
+}
+
+#btn1,#btn2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: arial black;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+#btn2{ line-height: 50px;}
+.active{ background-color: #ffbb00;}
+#data{ font-family: arial; font-size: 60px; color: #23242a; padding-bottom: 5; 
+    background: transparent; border: none; outline: none; border-bottom: 2px solid gray;
+    margin-top: 300px; margin-left: 200px;
+}
+#msg{ margin-left:200px; margin-top:10px; font-family: arial; font-size:10px;}
+::placeholder{ color: #23242a;}
+#outputbox{ width: 410px; height: 410px; background-color: #ffbb00; border-radius: 20px; box-shadow: -5px 5px 10px rgba(0,0,0,.1);position: absolute; right: 0; top: 20; transform: translateY(-50%);}
+
+#box2{ background-color: #ffbb; background-size: 350px; background-position: center;} 
+
+/* #title2{ font-family: fantasy; font-size: 40px; color: white; text-align: center; position: absolute; bottom:100px; left: 50%; transform: translateX(-50%);} */
+#scanner{ width: 800px; height: 700px; background-color: rgb(75, 33, 33); position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 999;}
+#scanner #preview{width: 450px; height: 300px;position: absolute; left: 21.9%; top: 25%; transform: translate(-50%,-50%);  background-color: white; z-index: 9999;}
+/* #msg2{ position: absolute; top: 69%; left: 42%; font-family: arial; font-size: 20px; background-color: antiquewhite;} */
+#scanner #msg2{ width: 450px; height: 500px; background-color: antiquewhite; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+#startbtn{ position: absolute; bottom: 0; left: 5%; z-index: 9999; cursor: pointer; background: #1a1a1a; border-radius: 20px; border: none; outline: none;
+    color: white; font-size: 20px;}
+
+#stopbtn{ position: absolute; bottom: 0; left: 20%;  z-index: 9999; cursor: pointer;background: #1a1a1a; border-radius: 20px; border: none; outline: none;
+            color: white; font-size: 20px;
+} 
