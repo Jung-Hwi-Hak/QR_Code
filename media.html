@@ -32,7 +32,7 @@
         }).catch(console.error)
     }
     
-    document.getElemetById("switch").addEventListener("click", () =>{
+    document.getElementById("switch").addEventListener("click", () =>{
         stopCamera();
         mode = '${mode === "user" ? "environment" : "user"}';
         startup(mode);
