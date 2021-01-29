@@ -35,9 +35,9 @@ scanner.scan(function(content){
 })
 
 
-$('#startbtn').on('click',function(){
+//$('#startbtn').on('click',function(){
     capture(mode); // capture함수 동작.
-})
+//})
 
 function capture(mode) {
 
