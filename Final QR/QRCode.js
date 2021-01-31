@@ -9,10 +9,16 @@ scanner.addListener('scan', (content)=>{
     console.log('nice');
 })
 //scan
+
 $('#switch').on('click', ()=>{
     stopCamera();
-    change_count = '${change_count = 0 ? 2 : 0}';
-    console.log('asd');
+    if(change_count != 2){
+        change_count = 2;
+    }else{
+        change_count = 0;
+    }
+    // `${mode === "user" ? "environment" : "user"}`;
+    console.log(change_count);
     alert('hiih');
     test();
 })
@@ -34,4 +40,3 @@ if(cameras.length > 0){
 console.error(e);
 });
 }
-
