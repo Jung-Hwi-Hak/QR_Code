@@ -11,7 +11,7 @@ scanner.addListener('scan', (content)=>{
 //scan
 $('#switch').on('click', ()=>{
     stopCamera();
-    change_count = '${change_count = 0 ? 1 : 0}';
+    change_count = '${change_count = 0 ? 2 : 0}';
     console.log('asd');
     test();
 })
