@@ -13,6 +13,7 @@ $('#switch').on('click', ()=>{
     stopCamera();
     change_count = '${change_count = 0 ? 2 : 0}';
     console.log('asd');
+    alert('hiih');
     test();
 })
 function stopCamera() { // mode를 변경하는 버튼을 누르면 정지 시키고
