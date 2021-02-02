@@ -1,6 +1,6 @@
 var camera = document.getElementById('camera'); // video
 var change = document.getElementById('switch'); // Camera Change
-var change_count = 0;
+var change_count = 2;
 var msg = document.getElementById('msg2'); // QRCode Value;
 
 let scanner = new Instascan.Scanner({video: camera});
