@@ -13,24 +13,24 @@ scanner.addListener('scan', (content)=>{
 check_facing.innerText = "후면";
 $('#switch').on('click', ()=>{
     stopCamera();
-    if(change_count != 2){
-        change_count = 2;
+    if(change_camera != 2){
+        change_camera = 2;
         check_facing.innerText = "후면";
     }else{
         check_facing.innerText = "전면";
-        change_count = 0;
+        change_camera = 0;
 
     }
     console.log(change_camera);
-    test();
+    scan();
 })
 function stopCamera() { // mode를 변경하는 버튼을 누르면 정지 시키고
     camera.srcObject && camera.srcObject.getTracks().forEach((t) => t.stop());
 }
 
 
-test();
-function test(){
+scan();
+function scan(){
 Instascan.Camera.getCameras().then(function(cameras){ //카메라 키기.
 if(cameras.length > 0){
     scanner.start(cameras[change_camera]);
