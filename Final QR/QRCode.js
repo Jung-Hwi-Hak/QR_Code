@@ -6,7 +6,9 @@ var check_facing = document.getElementById('check_facing');
 
 let scanner = new Instascan.Scanner({video: camera});
 scanner.addListener('scan', (content)=>{
-    $('#msg').text(content);
+    var scan_text = encodeURI(content);
+    var decode_text = decodeURI(scan_text);
+    $('#msg').text(decode_text);
 })
 //scan
 
