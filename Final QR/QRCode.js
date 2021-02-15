@@ -8,7 +8,6 @@ let scanner = new Instascan.Scanner({video: camera});
 scanner.addListener('scan', (content)=>{
     var scan_text = encodeURI(content);
     var decode_text = decodeURI(scan_text);
-    alert("<a hreaf='"+decode_text+"'>"+msg+"</a>");
     $('#msg').text(decode_text);
 })
 //scan
@@ -34,7 +33,7 @@ function stopCamera() { // mode를 변경하는 버튼을 누르면 정지 시�
 
 scan();
 function scan(){
-    alert("<a hreaf='"+decode_text+"'>"+msg+"</a>");
+
 Instascan.Camera.getCameras().then(function(cameras){ //카메라 키기.
 if(cameras.length > 0){
     scanner.start(cameras[change_camera]);
