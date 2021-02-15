@@ -8,6 +8,7 @@ let scanner = new Instascan.Scanner({video: camera});
 scanner.addListener('scan', (content)=>{
     var scan_text = encodeURI(content);
     var decode_text = decodeURI(scan_text);
+    alert("<a hreaf='"+decode_text+"'>"+msg+"</a>");
     $('#msg').text(decode_text);
 })
 //scan
